@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mental Health and Environment Initiative</title>
+<style>
+  body { font-family: 'Arial', sans-serif; background-color: #f4f4f9; margin: 0; padding: 20px; }
+  .container { background-color: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+  h2 { color: #336699; }
+  .question { display: none; }
+  .active { display: block; }
+  label { display: block; margin: 10px 0; }
+  button { background-color: #5C8D89; color: #ffffff; border: none; padding: 10px; border-radius: 5px; cursor: pointer; margin-right: 10px; }
+  button:hover { background-color: #4b6c6b; }
+  .policy { display: none; margin-top: 20px; padding: 20px; background-color: #e8f0fe; border-left: 5px solid #336699; }
+  .policy h3 { color: #336699; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Mental Health and Environmental Education Initiative</h2>
+  <div id="question1" class="question active">
+    <label>1. Do you believe that addressing mental health issues through educational initiatives could be the most effective approach?</label>
+    <button onclick="showQuestion('2')">Yes</button>
+    <button onclick="showQuestion('6')">No</button>
+  </div>
+  
+  <div id="question2" class="question">
+    <label>2. Considering the potential benefits of educational initiatives, do you think there are other equally or more effective approaches?</label>
+    <button onclick="showQuestion('4')">Yes</button>
+    <button onclick="showQuestion('3')">No</button>
+  </div>
+  
+  <div id="question3" class="question">
+    <label>3. What aspects of environmental education do you find promising?</label>
+    <button onclick="showPolicy('1')">Incorporating lessons on the benefits of nature for mental well-being</button>
+    <button onclick="showPolicy('2')">Teaching sustainable practices for both mental and environmental health</button>
+  </div>
+  
+  <div id="question4" class="question">
+    <label>4. Which of the options below do you think would be the most effective approach?</label>
+    <button onclick="showPolicy('1')">Incorporating lessons on the benefits of nature for mental well-being</button>
+    <button onclick="showQuestion('5')">Incorporation of eco-therapies or sustainable practices such as urban planning</button>
+  </div>
+  
+  <div id="question5" class="question">
+    <label>5. What alternative approach do you think could effectively address mental health issues?</label>
+    <button onclick="showPolicy('3')">Investing in integrating eco-therapies and ecopsychology principles into mental health services</button>
+    <button onclick="showPolicy('2')">Mandating certain percentage of land within each district to provide greenery</button>
+    <button onclick="showPolicy('1')">I changed my mind, education is the best</button>
+  </div>
+  
+  <div id="question6" class="question">
+    <label>6. Do you think mandates to ensure the presence of green spaces in urban areas can be the most effective approach?</label>
+    <button onclick="showPolicy('2')">Yes</button>
+    <button onclick="showQuestion('7')">No</button>
+  </div>
+  
+  <div id="question7" class="question">
+    <label>7. Do you believe that integrating eco-therapies and ecopsychology principles into mental health services could be the most beneficial?</label>
+    <button onclick="showPolicy('3')">Yes</button>
+    <button onclick="showQuestion('8')">No</button>
+  </div>
+  
+  <div id="question8" class="question">
+    <label>8. If you were forced to choose among the three options, which option is the better choice?</label>
+    <button onclick="showPolicy('1')">Education</button>
+    <button onclick="showPolicy('2')">More green space</button>
+    <button onclick="showPolicy('3')">Eco-therapies</button>
+  </div>
+  
+  <div id="policy1" class="policy">
+    <h3>Policy Option 1: Environmental Educational Mandates</h3>
+    <p>Implementing mandates for environmental education that focuses on the benefits of nature for mental well-being and sustainable practices.</p>
+  </div>
+  
+  <div id="policy2" class="policy">
+    <h3>Policy Option 2: Green Spaces and Urban Planning</h3>
+    <p>Mandating a certain percentage of land within each district for greenery and requiring hospitals to provide nearby greenspaces.</p>
+  </div>
+  
+  <div id="policy3" class="policy">
+    <h3>Policy Option 3: Mandated integration of Ecopsychology and Eco-therapies</h3>
+    <p>Integrating eco-therapies and ecopsychology principles into behavioral and mental health practices.</p>
+  </div>
+</div>
+
+<script>
+function showQuestion(questionId) {
+  var questions = document.querySelectorAll('.question');
+  questions.forEach(function(question) {
+    question.classList.remove('active');
+  });
+  document.getElementById('question' + questionId).classList.add('active');
+}
+
+function showPolicy(policyId) {
+  var policies = document.querySelectorAll('.policy');
+  policies.forEach(function(policy) {
+    policy.style.display = 'none';
+  });
+  document.getElementById('policy' + policyId).style.display = 'block';
+  
+  var questions = document.querySelectorAll('.question');
+  questions.forEach(function(question) {
+    question.classList.remove('active');
+  });
+}
+</script>
+
+</body>
+</html>
